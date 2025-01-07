@@ -14,7 +14,7 @@ function Player:new(world)
 	self.height = 32
 	self.speed = 500
 	self.jumpCount = 0
-	self.isGrounded = false
+	-- self.isGrounded = false
 
 	self.world = world
 
@@ -25,7 +25,7 @@ function Player:new(world)
 	self.physics.fixture = love.physics.newFixture(self.physics.body, self.physics.shape, 1)
 	self.physics.fixture:setRestitution(0.2)
 
-	self.physics.body:setGravityScale(10)
+	self.physics.body:setGravityScale(20)
 
 	self.draw = function()
 		love.graphics.rectangle("fill", self.physics.body:getX(), self.physics.body:getY(), self.width, self.height)
